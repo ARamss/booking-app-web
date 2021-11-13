@@ -5,6 +5,7 @@ import SignIn from './components/screens/Signin'
 import SignUp from './components/screens/Signup'
 import Instalaciones from './components/screens/instalaciones'
 import AgendarCita from './components/screens/agendarCita'
+import MisReservaciones from './components/screens/misReservaciones'
 import {reducer,initialState} from './reducers/userReducer'
 import NavBar from './components/Navbar'
 

@@ -9,8 +9,7 @@ import React from 'react';
             <li><a href="/">Home</a></li>
             <li><a href="/signin">Sign In</a></li>
             <li><a href="/signup">Sign Up</a></li>
-            <li><a href="/formularios">Formularios</a></li>
-            <li><a href="/nuevo-formulario">Nuevo Formularios</a></li>
+            <li><a href="/agendar-cita">Reservar</a></li>
             </ul>
         </div>
       </nav>
