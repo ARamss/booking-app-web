@@ -3,8 +3,8 @@ import {BrowserRouter,Route,Switch,useHistory} from 'react-router-dom'
 import Home from './components/screens/Home'
 import SignIn from './components/screens/Signin'
 import SignUp from './components/screens/Signup'
-import Formularios from './components/screens/Formularios'
-import NuevoFormulario from './components/screens/nuevoFormulario'
+import Instalaciones from './components/screens/instalaciones'
+import AgendarCita from './components/screens/agendarCita'
 import {reducer,initialState} from './reducers/userReducer'
 import NavBar from './components/Navbar'
 
@@ -35,11 +35,11 @@ const Routing =()=>{
       <Route path="/signup">
          <SignUp/>
       </Route>
-      <Route path="/formularios">
-         <Formularios/>
+      <Route path="/instalaciones">
+         <Instalaciones/>
       </Route>
-      <Route exact path="/nuevo-formulario">
-         <NuevoFormulario/>
+      <Route exact path="/agendar-cita">
+         <AgendarCita/>
       </Route>
     </Switch>
   );

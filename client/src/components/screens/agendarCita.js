@@ -1,9 +1,9 @@
 import React from 'react';
 
- const NuevoFormulario = ()=>{
+ const AgendarCita = ()=>{
     return(
         <h1>Nuevo Formulario</h1>
     )
  }
 
- export default NuevoFormulario
+ export default AgendarCita
