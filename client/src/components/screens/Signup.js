@@ -30,6 +30,7 @@ import M from 'materialize-css';
              },
              body:JSON.stringify({
                  name,
+                 lastname,
                  password,
                  email,
              })
@@ -64,7 +65,7 @@ import M from 'materialize-css';
                />
                <input
                  type="text"
-                 placeholder="name"
+                 placeholder="last name"
                  value={lastname}
                  onChange={(e)=>setlastName(e.target.value)}
                />
