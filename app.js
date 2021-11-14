@@ -20,7 +20,8 @@ mongoose.connection.on('error', ()=>{
 })
 
 require('./models/user')
-// require('./models/post')
+require('./models/cita')
+require('./models/instalacion')
 
 app.use(express.json());
 app.use(require('./routes/auth'))
