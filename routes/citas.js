@@ -3,7 +3,8 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const requireLogin = require('../middleware/requireLogin')
 const Cita = mongoose.model("Cita")
-const User= mongoose.model("User")
+const User = mongoose.model("User")
+const Instalacion = mongoose.model("Instalacion")
 
 router.get('/todas-las-citas',requireLogin,(req,res)=>{
     //show all posts
@@ -28,7 +29,7 @@ router.post('/nueva-cita',requireLogin,(req,res)=>{
     req.instalacion._id
     const cita = new Cita({
         horario,
-        usaInstalacion:req.instalacion,
+        usaInstalacion:req.instalacion._id,
         agendadoPor:req.user
    })
    cita.save().then(result=>{
