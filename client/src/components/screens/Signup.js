@@ -81,12 +81,10 @@ import M from 'materialize-css';
                  value={password}
                  onChange={(e)=>setPassword(e.target.value)}
                />
-
-
                <button className="btn waves-effect waves-light #64b5f6 blue lighten-2"
                onClick={()=>PostData()}
                >
-                 Sign In
+                 Sign Up
                </button>
                <h5>
                  <Link to="/signin">Already have an account?</Link>
