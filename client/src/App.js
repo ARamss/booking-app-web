@@ -42,6 +42,9 @@ const Routing =()=>{
       <Route exact path="/agendar-cita">
          <AgendarCita/>
       </Route>
+      <Route exact path="/mis-reservaciones">
+         <MisReservaciones/>
+      </Route>
     </Switch>
   );
 }
