@@ -2,24 +2,15 @@ const mongoose = require('mongoose')
 const {ObjectId} = mongoose.Schema.Types
 
 const citaSchema = new mongoose.Schema({
-    title:{
-      type:String,
+    horario:{
+      type:Date,
       required:true
     },
-    body:{
-      type:String,
-      required:true
+    usaInstalacion:{
+        type:ObjectId,
+        ref:"Instalacion"
     },
-    photo:{
-      type:String,
-      required:true
-    },
-    likes:[{type:ObjectId,ref:"User"}],
-    comments:[{
-        text:String,
-        postedBy:{type:ObjectId,ref:"User"}
-    }],
-    postedBy:{
+    agendadoPor:{
         type:ObjectId,
         ref:"User"
     }
