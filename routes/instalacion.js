@@ -25,7 +25,7 @@ router.post('/nueva-instalacion',requireLogin,(req,res)=>{
         res.status(422).json({error:"agrega un nombre"})
     }
     const instalacion = new Instalacion({
-        nombre,
+        name,
         photo:pic,
    })
    instalacion.save().then(result=>{

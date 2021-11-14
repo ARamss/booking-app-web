@@ -7,15 +7,15 @@ module.exports = (req,res,next) => {
     const{authorization} = req.headers
     //authorization === Bearer "token"
     if(!authorization){
-        res.status(401).json({error:"You need to be logged in"})
+        res.status(401).json({error:"Necesitas estar registrado"})
     }
     const token = authorization.replace("Bearer ","")
     jwt.verify(token,JWT_SECRET,(error,payload)=>{
       if(error){
-        return res.status(401).json({error:"you must be logged in"})
+        return res.status(401).json({error:"Necesitas estar registrado"})
       }
       const {_id} = payload
-      //find user in DB with _id and then assign request.
+
       User.findById(_id).then(userdata=>{
           req.user = userdata
           next()

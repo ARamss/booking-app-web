@@ -26,7 +26,7 @@ require('./models/instalacion')
 app.use(express.json());
 app.use(require('./routes/auth'))
 app.use(require('./routes/citas'))
-// app.use(require('./routes/user'))
+app.use(require('./routes/instalacion'))
 
 //start servers
 app.listen(PORT, () => {
