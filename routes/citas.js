@@ -22,7 +22,7 @@ router.get('/todas-las-citas',requireLogin,(req,res)=>{
 router.post('/nueva-cita',requireLogin,(req,res)=>{
     const {horario,instalacion} = req.body
     if(!instalacion || !horario){
-        res.status(422).json({error:"Please add all the fields"})
+        res.status(422).json({error:"Por favor llena todos los campos"})
     }
     req.user.password = undefined
     req.instalacion._id

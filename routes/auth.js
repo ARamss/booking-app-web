@@ -14,12 +14,12 @@ router.get('/protected',requireLogin,(req,res)=>{
 router.post('/signup', (req,res)=>{
     const {name,lastname,email,password} = req.body
     if(!name || !lastname ||  !email || !password){
-          return res.status(422).json({error:"Something might be missing."})
+          return res.status(422).json({error:"Por favor llena todos los campos"})
     }
     User.findOne({email:email})
       .then((savedUser)=>{
             if(savedUser){
-              return res.status(422).json({error:"This email has already signed up."})
+              return res.status(422).json({error:"Este correo ya esta registrado"})
             }
             //Password Hash
             bcrypt.hash(password,12)
@@ -32,7 +32,7 @@ router.post('/signup', (req,res)=>{
                 })
                 user.save()
                 .then(user=>{
-                    res.json({message:"Welcome!"})
+                    res.json({message:"Bienvenido!"})
                 })
                 .catch(error=>{
                     console.log(error)
@@ -47,12 +47,12 @@ router.post('/signup', (req,res)=>{
 router.post('/signin',(req,res)=>{
      const {email,password} = req.body
       if(!email || !password){
-          return res.status(422).json({error:"Please add all the fields"})
+          return res.status(422).json({error:"Por favor llena todos los campos"})
       }
       User.findOne({email:email})
       .then(savedUser=>{
           if(!savedUser){
-             return res.status(422).json({error:"Invalid Email or Password"})
+             return res.status(422).json({error:"Correo o Password Invalidos"})
           }
           bcrypt.compare(password,savedUser.password)
           .then(doMatch=>{
@@ -64,7 +64,7 @@ router.post('/signin',(req,res)=>{
                   res.json({token,user:{_id,name,lastname,email}})
               }
               else{
-                  return res.status(422).json({error:"Invalid Email or Password"})
+                  return res.status(422).json({error:"Correo o Password Invalidos"})
               }
           }).catch(error=>{
                 console.log(error)
