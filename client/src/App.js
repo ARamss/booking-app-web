@@ -1,4 +1,5 @@
 import React,{useEffect,createContext,useReducer,useContext} from 'react'
+import "./App.css"
 import {BrowserRouter,Route,Switch,useHistory} from 'react-router-dom'
 import Home from './components/screens/Home'
 import SignIn from './components/screens/Signin'

@@ -10,7 +10,6 @@ router.get('/todas-las-citas',requireLogin,(req,res)=>{
     //show all posts
     Cita.find()
     .populate("agendadoPor","_id name")
-    .populate("comments.postedBy","_id name")
     .then(citas=>{
         res.json({citas})
     })
